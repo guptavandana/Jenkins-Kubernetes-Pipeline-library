@@ -8,14 +8,14 @@ def call(body) {
 	node{
               statge('test'){
 
-		sh 'echo test'
+		sh "echo test"
 
               }
 	      stagt('push'){
-			sh '''
+			sh """
 		           echo 'This is a test file' > test.txt
 		           tar -zcf test.tar.gz test.txt
-			'''
+		"""	
 			useNexus{
 			  nexusArtifactUploader artifacts: [[artifactId: 'nexus-dfs',
 			  classifier: 'debug',
