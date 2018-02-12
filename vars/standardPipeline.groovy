@@ -16,11 +16,13 @@ def call(body) {
 		           echo 'This is a test file' > test.txt
 		           tar -zcf test.tar.gz test.txt
 		"""
+sleep(2)
 		useNexus{
                          echo env.NexusUrl
 		echo env.NexusUser
 	
 		}
+sleep(2)
 	
 			useNexus{
 			  nexusArtifactUploader artifacts: [[artifactId: 'dfs',
