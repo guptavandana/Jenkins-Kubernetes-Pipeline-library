@@ -15,7 +15,13 @@ def call(body) {
 			sh """
 		           echo 'This is a test file' > test.txt
 		           tar -zcf test.tar.gz test.txt
-		"""	
+		"""
+		useNexus{
+                         echo env.NexusUrl
+		echo env.credentialsId
+	
+		}
+/*	
 			useNexus{
 			  nexusArtifactUploader artifacts: [[artifactId: 'nexus-dfs',
 			  classifier: 'debug',
@@ -28,6 +34,7 @@ def call(body) {
 			  repository: 'tip-portal',
 			  version: "1.0.7"
 			}
+*/
 		}
 	}
 }
