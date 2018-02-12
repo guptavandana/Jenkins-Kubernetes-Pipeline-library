@@ -5,11 +5,11 @@ def call(body) {
   body.delegate = config
   body()
 
-	node(label){
+	node('label'){
 		stage('push'){
 			sh '''
-				echo 'This is a test file' > test.txt
-				tar -zcf test.tar.gz test.txt
+		           echo 'This is a test file' > test.txt
+		           tar -zcf test.tar.gz test.txt
 			'''
 			useNexus{
 			  nexusArtifactUploader artifacts: [[artifactId: 'nexus-dfs',
