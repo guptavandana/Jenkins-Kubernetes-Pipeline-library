@@ -24,18 +24,18 @@ sleep(2)
 		}
 sleep(2)
 	
-			useNexus{
+//			useNexus{
 			  nexusArtifactUploader artifacts: [[artifactId: 'dfs',
 			  classifier: 'debug',
 			  file: 'test.tar.gz', type: 'gzip-compressed']],
 			  credentialsId: 'nexus',
 			  groupId: 'dfs',
-			  nexusUrl: env.NexusUrl,
+			  nexusUrl: http://47.74.228.246:30002,
 			  nexusVersion: 'nexus3',
 			  protocol: 'http',
 			  repository: 'tip-portal',
 			  version: "1.0.7"
-			}
+//			}
 
 		}
 	}
