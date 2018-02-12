@@ -18,15 +18,15 @@ def call(body) {
 		"""
 		useNexus{
                          echo env.NexusUrl
-		echo env.credentialsId
+		echo env.NexusUser
 	
 		}
-/*	
+	
 			useNexus{
 			  nexusArtifactUploader artifacts: [[artifactId: 'nexus-dfs',
 			  classifier: 'debug',
 			  file: 'test.tar.gz', type: 'gzip-compressed']],
-			  credentialsId: env.credentialsId,
+			  credentialsId: 'nexus',
 			  groupId: 'dfs',
 			  nexusUrl: env.NexusUrl,
 			  nexusVersion: 'nexus3',
@@ -34,7 +34,7 @@ def call(body) {
 			  repository: 'tip-portal',
 			  version: "1.0.7"
 			}
-*/
+
 		}
 	}
 }
