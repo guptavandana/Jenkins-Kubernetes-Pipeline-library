@@ -5,7 +5,7 @@ def call(body) {
   body.delegate = config
   body()
 
-	node('label'){
+	node{
 		stage('push'){
 			sh '''
 		           echo 'This is a test file' > test.txt
