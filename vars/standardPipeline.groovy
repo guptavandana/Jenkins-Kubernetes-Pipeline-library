@@ -23,7 +23,7 @@ def call(body) {
 		}
 	
 			useNexus{
-			  nexusArtifactUploader artifacts: [[artifactId: 'nexus-dfs',
+			  nexusArtifactUploader artifacts: [[artifactId: 'dfs',
 			  classifier: 'debug',
 			  file: 'test.tar.gz', type: 'gzip-compressed']],
 			  credentialsId: 'nexus',
