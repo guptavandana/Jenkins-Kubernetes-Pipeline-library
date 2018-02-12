@@ -6,7 +6,12 @@ def call(body) {
   body()
 
 	node{
-		stage('push'){
+              statge('test'){
+
+		sh 'echo test'
+
+              }
+	      stagt('push'){
 			sh '''
 		           echo 'This is a test file' > test.txt
 		           tar -zcf test.tar.gz test.txt
