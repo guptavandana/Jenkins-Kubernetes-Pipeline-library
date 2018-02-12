@@ -30,7 +30,7 @@ sleep(2)
 			  file: 'test.tar.gz', type: 'gzip-compressed']],
 			  credentialsId: 'nexus',
 			  groupId: 'dfs',
-			  nexusUrl: http://47.74.228.246:30002,
+			  nexusUrl: 'http://47.74.228.246:30002',
 			  nexusVersion: 'nexus3',
 			  protocol: 'http',
 			  repository: 'tip-portal',
