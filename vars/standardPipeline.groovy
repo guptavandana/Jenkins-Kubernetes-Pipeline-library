@@ -5,8 +5,13 @@ def call(body) {
   body.delegate = config
   body()
 
+   def approvalMap
+   stage('inpuat'){
+   	approvalMap = input id: 'namespace', message: 'Enter Namespace', ok: 'Proceed?', parameters: [string(defaultValue: '', description: '', name: 'namespace')]
+
+      def namespace = "approvalMap['namespace']"
+
 	node{
-	      def namespace = "${config.namespace}"
               stage('ask'){
              sh '''
                 echo ${namespace}
@@ -31,4 +36,5 @@ def call(body) {
 
 		}
 	}
+}
 }
