@@ -6,6 +6,13 @@ def call(body) {
   body()
 
 	node{
+	      def namespace = "${config.namespace}"
+              stage('ask'){
+             sh '''
+                echo "${namespace}"
+			''' 
+
+		}
               stage('test'){
 
 		sh "echo test"
@@ -16,26 +23,11 @@ def call(body) {
 		           echo 'This is a test file' > test.txt
 		           tar -zcf test.tar.gz test.txt
 		"""
-sleep(2)
 		useNexus{
                          echo env.NexusUrl
-		echo env.NexusUser
+		        echo env.NexusUser
 	
 		}
-sleep(2)
-	
-//			useNexus{
-			  nexusArtifactUploader artifacts: [[artifactId: 'dfs',
-			  classifier: 'debug',
-			  file: 'test.tar.gz', type: 'gzip-compressed']],
-			  credentialsId: 'nexus',
-			  groupId: 'dfs',
-			  nexusUrl: 'http://47.74.228.246:30002',
-			  nexusVersion: 'nexus3',
-			  protocol: 'http',
-			  repository: 'tip-portal',
-			  version: "1.0.7"
-//			}
 
 		}
 	}
