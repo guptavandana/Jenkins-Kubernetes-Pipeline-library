@@ -9,7 +9,7 @@ def call(body) {
 	      def namespace = "${config.namespace}"
               stage('ask'){
              sh '''
-                echo "${namespace}"
+                echo ${namespace}
 			''' 
 
 		}
